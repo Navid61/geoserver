@@ -489,11 +489,11 @@ public class ImportJSONReader {
     private Map<String, Object> jsonAsMap(JSONObject json) {
         return json.getJSONObject("time");
     }
-
+/////This section is incomplete!
     Archive archive(JSONObject json) throws IOException {
         throw new UnsupportedOperationException("TODO: implement");
     }
-
+////////////////////////////////////////
     public Directory directory(JSONObject json) throws IOException {
         if (json.has("location")) {
             return new Directory(new File(json.getString("location")));
@@ -501,11 +501,11 @@ public class ImportJSONReader {
             return Directory.createNew(importer.getUploadRoot());
         }
     }
-
+//This section is incomplelete user can not send data when database type is PostGIS
     Database database(JSONObject json) {
         throw new UnsupportedOperationException("TODO: implement");
     }
-
+///////////////////////////////////
     ReferencedEnvelope bbox(JSONObject json) {
         CoordinateReferenceSystem crs = null;
         if (json.has("crs")) {
